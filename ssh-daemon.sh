@@ -104,7 +104,7 @@ do
             echo "$($current_time): $connections " 
         done 
             $cmd
-	    echo "$cmd">"$HOME/logs/ssh_from_WAN/${dir}/cmd_file"
+	    echo "$cmd">>"$HOME/logs/ssh_from_WAN/${dir}/cmd_file"
         if [ "$?" -eq "0" ];then
             echo "$($current_time) : succeed!"
         $write_info_to_wan_device

@@ -54,7 +54,7 @@ case $1 in
 			    kill -9 "$pid_tmp"
 			    echo "$($current_time) : stop ssh remote port forwarding $cmd_tmp pid:  $pid_tmp"
 			done
-		    done < ${log_WAN_dirs}/cmd_file
+		    done < "${log_WAN_dirs}/cmd_file"
 		else 
 		    echo "can not find file ${log_WAN_dirs}/cmd_file !"
 		fi
