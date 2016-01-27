@@ -1,3 +1,2 @@
-listen_port_r	    des_port	server_port user    server_ip_addrs
-7778		    0702	443	    lixun   xushuang-vps-sf-ipv5
-7778		    0702	1080	    lixun   202.118.68.191
+#listen_port_r	    des_port	server_port user    server_ip_addrs
+7778		    22		443	    lixun   xushuang-vps-sf-ipv5

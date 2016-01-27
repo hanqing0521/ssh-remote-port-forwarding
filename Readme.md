@@ -30,6 +30,15 @@ listen_port_r		des_port	    server_port		    user	    server_ip_addrs
 default_listen_port	default_des_port    default_server_port	    lixun	    default_server_ip	
 7778			22		    443			    liyanhong   119.75.218.70  
 
+##########  开启#########
+校内机器运行 脚本 ./server_run.sh start  开始开启服务 如果想要进入后台运行 请运行 nohup ./server_run.sh start &
+公网机器运行 ./client_run.sh start 
+###########停用######################
+校内机器运行 脚本 ./server_run.sh stop  
+公网机器运行 ./client_run.sh stop 
+
+
+
 1.	default_server_ip 这个外网机器的ip地址或者是域名 比如，你不叫厉害申请到的域名是 www.baidu.com (真的只是瞎扯) 此时就些 www.baidun.com
 	如果有固定ip地址 直接使用就好，再比如如果你比较牛逼你的ip地址是 119.75.218.70 （别看了这个也是百度的地址） 你就输入119.75.218.70
 

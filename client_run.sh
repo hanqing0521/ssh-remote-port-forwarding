@@ -5,6 +5,7 @@ case $1 in
 	[ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh"
 	echo "StrictHostKeyChecking no">"$HOME/.ssh/config"
 	echo "UserKnownHostsFile $HOME/.ssh/UnTrustHosts">>"$HOME/.ssh/config"
+	chmod 600 $HOME/.ssh/config
 	[ ! -d "$HOME/logs/ssh_from_LAN" ] && mkdir -p "$HOME/logs/ssh_from_WAN"
 	;;
     stop)
