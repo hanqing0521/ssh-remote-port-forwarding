@@ -19,8 +19,15 @@ case $1 in
 		log_WAN_dirs=$HOME/logs/ssh_from_WAN/"$dir"
 		[ ! -d "$log_WAN_dirs" ] && mkdir -p "$log_WAN_dirs"
 		commands="./ssh-daemon.sh $listen_port_r $des_port $server_port $user $server_ip_addrs"
-		echo "$commands" >>"${log_WAN_dirs}/cmd_file"
-		./ssh-daemon.sh $listen_port_r $des_port $server_port $user $server_ip_addrs &
+		
+		It_Is_Run=$(ps -ax|grep "daemon"|grep "$server_ip_addrs"|grep -v 'grep')  #is there are ssh -Nfg.....($cmd) runing?
+		if [ -z ];then
+		    echo "$commands" >>"${log_WAN_dirs}/cmd_file"
+		    echo "start $commands "
+		    ./ssh-daemon.sh $listen_port_r $des_port $server_port $user $server_ip_addrs &
+		else 
+		    echo "$commands  work well "
+		fi
 		#echo  "$listen_port_r $des_port $server_port $user $server_ip_addrs" &
 	    else 
 		continue
