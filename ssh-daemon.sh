@@ -72,7 +72,9 @@ esac
 
 
 #ssh remote port forwarding command
-dir="${server_ip}:$server_port"
+dir="${server_ip}P$server_port"
+[ ! -d "$HOME/logs/ssh_from_WAN/$dir" ]&& mkdir -p "$HOME/logs/ssh_from_WAN/${dir}"
+echo $dir
 cmd="ssh -Nfg -R ${listen_port_r}:127.0.0.1:${des_port} ${ssh_server}"
 exit_ssh='sleep 0.5;exit'
 ssh_commands="sleep 0.5;mkdir -p logs/ssh_from_LAN/;echo 'LAN server run '${cmd} >> 'logs/ssh_from_LAN/login_info'; exit"
@@ -82,8 +84,8 @@ test_inverse_connection='"'"ssh -p $listen_port_r ${user}@127.0.0.1 $inverse_tes
 #test_inverse_connection='"'"ssh -p $listen_port_r ${user}@127.0.0.1 'exit'"'"'
 write_info_to_wan_device="ssh $ssh_server $ssh_commands"
 current_time='date -Iseconds' 
-if [ -d "$HOME/logs/ssh_from_WAN/${dir}/" ];then
-    echo " $HOME/logs/ssh_from_WAN/${dir}/   exist!"
+if [ -d "$HOME/logs/ssh_from_WAN/${dir}" ];then
+    echo " $HOME/logs/ssh_from_WAN/${dir}   exist!"
 else 
     mkdir -p $HOME/logs/ssh_from_WAN/${dir}/
 fi
