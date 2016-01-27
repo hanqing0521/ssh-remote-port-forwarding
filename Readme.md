@@ -38,7 +38,8 @@ default_listen_port	default_des_port    default_server_port	    lixun	    defaul
 公网机器运行 ./client_run.sh stop 
 
 
-
+单纯的使用一个脚本ssh-daemon 也是可以的
+此时可以在ssh-daemon中更改默认参数就好，但是功能不强，而且对于第一次使用此脚本会有很多不方便的地方，不推荐使用。
 1.	default_server_ip 这个外网机器的ip地址或者是域名 比如，你不叫厉害申请到的域名是 www.baidu.com (真的只是瞎扯) 此时就些 www.baidun.com
 	如果有固定ip地址 直接使用就好，再比如如果你比较牛逼你的ip地址是 119.75.218.70 （别看了这个也是百度的地址） 你就输入119.75.218.70
 
